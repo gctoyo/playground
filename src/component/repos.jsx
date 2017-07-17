@@ -8,7 +8,9 @@ class Repos extends React.Component {
 
   render() {
     return (
-      <div>Repos</div>
+      <div id="home">
+        工事中
+      </div>
     );
   }
 }

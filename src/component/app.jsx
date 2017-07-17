@@ -13,10 +13,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <ul>
-          <li><Link to="/repos/hoge">Hoge</Link></li>
-        </ul>
+      <div id="home">
+        成果物の確認のためのページです。
       </div>
     );
   }
