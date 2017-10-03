@@ -40,11 +40,15 @@ const postBillingToSlack = (billings, context) => {
       short: true
     });
   }
+  const now = new Date();
+  now.setHours(now.getHours() + 9);
+  const dayOfWeek = now.getDay();
+  const dayOfWeekStr = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ][dayOfWeek];
   const message = {
     channel: channelName,
     attachments: [{
-      fallback: '今月のAWSの利用料は、' + floatFormat(billings['Total'], 2) + ' USDです。',
-      pretext: 'おはようございます。今月のAWSの利用費です。',
+      fallback: '今月のAWSの利用料金は、' + floatFormat(billings['Total'], 2) + ' USDです。',
+      pretext: `${now.getMonth()+1}/${now.getDate()} (${dayOfWeekStr}) ${('0'+now.getHours()).slice(-2)}:00時点のAWSの利用料金です。`,
       color: 'good',
       fields: fields
     }]
