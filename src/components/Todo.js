@@ -6,7 +6,9 @@ const Todo = ({ onClick, completed, text }) => (
   <ListGroupItem
     onClick={onClick}
     style={{
-      textDecoration: completed ? 'line-through' : 'none'
+      width: "100%",
+      textDecoration: completed ? 'line-through' : 'none',
+      backgroundColor: completed ? '#c5e59f' : '#ffffff'
     }}
     disabled={completed}
   >

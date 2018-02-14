@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
-import { Panel } from 'react-bootstrap'
+import { Panel, Col } from 'react-bootstrap'
 
 
 const TodoList = ({ todos, onTodoClick }) => (
   <Panel
     header="Todo List"
     bsStyle="primary"
+    className="col-md-8 col-xs-9"
     style={{
-      margin: "10px"
+      marginTop: "10px"
     }}
   >
     {todos.map(todo => (
